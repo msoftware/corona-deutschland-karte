@@ -1,14 +1,12 @@
 #!/bin/bash
+set -x
 set -e
 
-cd "$(dirname "$0")"
+cd /var/www/corona.jentsch.io/corona-deutschland-karte/bin/
 
 echo '# cleanup data'
 rm -f ../data/*.json.bz2
 rm -f ../docs/data.js
-
-echo '# update code'
-git pull
 
 echo '# download data'
 node 1_fetch_data.js
@@ -21,3 +19,4 @@ node 3_build.js
 
 echo '# deploy'
 sh 4_deploy.sh
+

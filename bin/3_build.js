@@ -18,10 +18,12 @@ let html = fs.readFileSync(resolve(folderSrc,'index.html'), 'utf8');
 
 html = html.replace(/<!--.*?-->/g,'')
 
+/*
 html = html.replace(/<script.*?<\/script>/g, match => {
 	script.push(fs.readFileSync(resolve(folderSrc, match.match(/src="(.*?)"/)[1]), 'utf8'));
 	return (script.length > 1) ? '' : '<script type="text/javascript" src="https://2ndwave.storage.googleapis.com/script.js"></script>';
 })
+*/
 
 html = html.replace(/<link.*?>/g, match => {
 	if (!match.includes('rel="stylesheet"')) {

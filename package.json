@@ -6,7 +6,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "start": "./node_modules/.bin/http-server -s -c-1 -p 8088 -a localhost -o / ./docs/",
+    "startlocal": "./node_modules/.bin/http-server -s -c-1 -p 9099 -a localhost -o / ./docs/",
+    "start": "./node_modules/.bin/http-server -s -c-1 -p 9099 -a 1br.de -o / ./docs/",
     "build": "./bin/run.sh"
   },
   "repository": {
